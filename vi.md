@@ -517,7 +517,7 @@ có nhiều yếu tố khác để tạo kiểu thanh cuộn. Hãy ghé thăm [W
 
 ### Custom text selection (Lựa chọn văn bản tùy chọn)
   
-  Thay đổi kiểu dáng của lựa chọn văn bản.
+  Thay đổi kiểu dáng của văn bản duoc lựa chọn .
 
 #### HTML
 
@@ -557,7 +557,7 @@ có nhiều yếu tố khác để tạo kiểu thanh cuộn. Hãy ghé thăm [W
 
 #### Giải thích 
 
-`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
+`::selection` định nghĩa một bộ chọn giả trên một phần tử để định kiểu văn bản bên trong nó khi được chọn. Lưu ý rằng nếu bạn không kết hợp voi  bộ chọn khác bất kỳ, kiểu của bạn sẽ được áp dụng ở cấp gốc cua tài liệu, cho bất kỳ phần tử nào có thể lựa chọn .
 
 #### Browser support
 
@@ -571,8 +571,7 @@ in any specification.</span>
 
 ### Custom variables
 
-CSS variables that contain specific values to be reused throughout a document.
-
+Các biến CSS chứa các giá trị cụ thể để được sử dụng lại trong suốt tài liệu.
 #### HTML
 
 ```html
@@ -623,11 +622,10 @@ CSS variables that contain specific values to be reused throughout a document.
 
 #### Explanation
 
-The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
-
+biến được định nghĩa toàn cuc voi `:root` CSS pseudo-class la thu noi phần tử gốc của một cây đại diện cho tài liệu. Các biến cũng có thể được đưa vào bộ chọn nếu được định nghia trong khối
 Declare a variable with `--variable-name:`.
 
-Reuse variables throughout the document using the `var(--variable-name)` function.
+Tái sử dụng các biến số trong toàn bộ tài liệu bằng cách sử dụng ham `var(--variable-name)`.
 
 #### Browser support
 
@@ -640,8 +638,7 @@ Reuse variables throughout the document using the `var(--variable-name)` functio
 
 ### Disable selection
 
-Makes the content unselectable.
-
+Làm cho nội dung không the được chọn.
 #### HTML
 
 ```html
@@ -672,7 +669,7 @@ Makes the content unselectable.
 
 #### Explanation
 
-`user-select: none` specifies that the text cannot be selected.
+`user-select: none` xác định rằng văn bản không thể được chọn.
 
 #### Browser support
 
@@ -686,8 +683,7 @@ Makes the content unselectable.
 
 ### Donut spinner
 
-Creates a donut spinner that can be used to indicate the loading of content.
-
+Tạo một máy quay tron có thể được sử dụng để chỉ việc nội dung dang duoc tải.
 #### HTML
 
 ```html
@@ -739,10 +735,8 @@ Creates a donut spinner that can be used to indicate the loading of content.
 </style>
 
 #### Explanation
-
-Use a semi-transparent `border` for the whole element, except one side that will
-serve as the loading indicator for the donut. Use `animation` to rotate the element.
-
+Sử dụng một `border` bán trong suốt cho toàn bộ phần tử, ngoại trừ một bên sẽ
+phục vụ như là chỉ số tải cho banh quay tron. Sử dụng `animation` để xoay phần tử.
 #### Browser support
 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
@@ -754,8 +748,7 @@ serve as the loading indicator for the donut. Use `animation` to rotate the elem
 
 ### Dynamic shadow
 
-Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
-
+Tạo một bóng tương tự như `shadow-box` nhưng dựa trên màu sắc của phần tử đó.
 #### HTML
 
 ```html
@@ -823,21 +816,20 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 </style>
 
 #### Explanation
+Đoạn mã đòi hỏi một trường hợp phức tạp của ngan xếp chồng để có được đúng, như vậy mà các phần tử giả
+sẽ được đặt bên dưới phần tử cua chinh no trong khi vẫn nhìn thấy được.
 
-The snippet requires a somewhat complex case of stacking contexts to get right, such that the pseudo-element
-will be positioned underneath the element itself while still being visible.
-
-1. `position: relative` on the parent establishes a Cartesian positioning context for child elements.
-2. `z-index: 1` establishes a new stacking context.
-3. `position: relative` on the child establishes a positioning context for pseudo-elements.
-4. `::after` defines a pseudo-element.
-5. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-6. `width: 100%` and `height: 100%` sizes the pseudo-element to fill its parent's dimensions, making it equal in size.
-7. `background: inherit` causes the pseudo-element to inherit the linear gradient specified on the element.
-8. `top: 0.5rem` offsets the pseudo-element down slightly from its parent.
-9. `filter: blur(0.4rem)` will blur the pseudo-element to create the appearance of a shadow underneath.
-10. `opacity: 0.7` makes the pseudo-element partially transparent.
-11. `z-index: -1` positions the pseudo-element behind the parent.
+1. `position: relative` thiết lập trong phan tu cha một ngữ cảnh định vị Cartesian cho các phần tử con.
+2. `z-index: 1` thiết lập một ngữ cảnh xếp chồng mới.
+3. `position: relative` trên phan tu con thiết lập một bối cảnh định vị cho các phần tử giả.
+4. `::after` định nghĩa một phần tử giả..
+5. `position: absolute`  lấy phần tử giả ra khỏi luong của tài liệu và định vị nó trong quan hệ với phan tu cha.
+6. `width: 100%` and `height: 100%` kích cỡ phần tử giả để điền vào kích thước của cha  làm cho nó có kích thước bằng nhau.
+7. `background: inherit` làm cho phần tử giả thừa kế gradient tuyến tính được xác định trên phần tử.
+8. `top: 0.5rem` offsets phần tử giả giảm nhẹ từ cha của nó.
+9. `filter: blur(0.4rem)` ẽ làm mờ phần tử giả de tạo sự xuất hiện của một cái bóng bên dưới.
+10. `opacity: 0.7` làm cho phần tử giả mang một phần minh bạch.
+11. `z-index: -1` định vị phần tử giả phía sau phan tu cha.
 
 #### Browser support
 
@@ -849,8 +841,8 @@ will be positioned underneath the element itself while still being visible.
 
 ### Easing variables
 
-Variables that can be reused for `transition-timing-function` properties, more
-powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
+Các biến có thể được sử dụng lại cho `transition-timing-function` thuoc tinh,nhieu tinh nang
+mạnh mẽ hơn tích hợp sẵn `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 
 #### HTML
 
@@ -946,7 +938,7 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 
 #### Explanation
 
-The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
+Các biến được định nghĩa toàn cuc trong `: root` CSS pseudo-class la thu de noi với phần tử gốc của một cây đại diện cho tài liệu. Trong HTML, `: root` đại diện cho phần tử` <html> `và giống với trình chọn` html`, ngoại trừ tính cụ thể của nó cao hơn.
 
 #### Browser support
 
@@ -958,8 +950,7 @@ The variables are defined globally within the `:root` CSS pseudo-class which mat
 
 ### Etched text
 
-Creates an effect where text appears to be "etched" or engraved into the background.
-
+Tạo ra một hiệu ứng mà văn bản xuất hiện để được "khắc" hoặc khắc vào nền.
 #### HTML
 
 ```html
@@ -994,13 +985,10 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 
 #### Explanation
 
-`text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically
-from the origin position.
-
-The background must be darker than the shadow for the effect to work.
-
-The text color should be slightly faded to make it look like it's engraved/carved out
-of the background.
+`text-shadow: 0 2px white` tạo ra một bóng tối  offset `0px` theo chiều ngang và `2px` theo chiều dọc
+từ vị trí xuất phat.
+Nền phải tối hơn bóng tối để hiệu ứng làm việc.
+Màu văn bản nên hơi nhạt dần để làm cho nó trông giống như nó được khắc / khắc ra tren nen.
 
 #### Browser support
 
@@ -1012,8 +1000,7 @@ of the background.
 
 ### Evenly distributed children
 
-Evenly distributes child elements within a parent element.
-
+Phân phối đều các phần tử con trong phần tử cha.
 #### HTML
 
 ```html
@@ -1053,11 +1040,9 @@ Evenly distributes child elements within a parent element.
 
 #### Explanation
 
-1. `display: flex` enables flexbox.
-2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
-
-Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
-
+1. `display: flex` cho phép uốn cong hop.
+2. `justify-content: space-between` phân bố đều các phần tử con theo chiều ngang. Mục đầu tiên được đặt ở cạnh trái, trong khi mục cuối cùng được đặt ở cạnh bên phải.
+Cách khác, sử dụng `justify-content: space-around` để phân phoi cho phan tu con có không gian xung quanh chúng, chứ không phải giữa chúng.
 #### Browser support
 
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
@@ -1068,8 +1053,7 @@ Alternatively, use `justify-content: space-around` to distribute the children wi
 
 ### Flexbox centering
 
-Horizontally and vertically centers a child element within a parent element using `flexbox`.
-
+Theo chiều dọc và chiều dọc, phần tử con nằm trong phần tử cha sử dụng `flexbox`.
 #### HTML
 
 ```html
@@ -1108,7 +1092,6 @@ Horizontally and vertically centers a child element within a parent element usin
 #### Explanation
 
 1. `display: flex` enables flexbox.
-2. `justify-content: center` centers the child horizontally.
 3. `align-items: center` centers the child vertically.
 
 #### Browser support
