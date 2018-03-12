@@ -1,8 +1,6 @@
 # 30_seconds_of_css
 
-### Bouncing loader
-
-`Creates a bouncing loader animation.`
+### Nảy khi tải trang.
 
 Tạo hiệu ứng nảy khi tải trang.
 #### HTML
@@ -1696,8 +1694,7 @@ li:not(:last-child) {
 
 #### Giải thích
 
-`li:not(:last-child)` specifies that the styles should apply to all `li` elements except
-the `:last-child`.
+`li:not(:last-child)` xác định rằng các phong cách nên áp dụng cho tất cả thành phần `li` ngoại trử thẻ con `:last-child`.
 
 #### Trình duyệt hỗ trợ.
 
@@ -1790,16 +1787,15 @@ document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').inne
 
 #### Giải thích
 
-1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
-2. `::after` defines a pseudo element.
+1. `position: relative` trên cha thiết lập một ngữ cảnh định vị Descartes cho các phần tử giả.
+2. `::after` định nghĩa một phần tử giả.
 3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
    (top to bottom).
-4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has
-   the pseudo element).
-6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
-7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
-8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
+4. `position: absolute` lấy phần tử giả ra khỏi dòng chảy của tài liệu và định vị nó trong quan hệ với cha.
+5. `width: 240px` phù hợp với kích thước của phần tử cuộn.
+6. `height: 25px` là chiều cao của phần tử giả mờ , cần được giữ ở mức tương đối nhỏ.
+7. `bottom: 0` định vị phần tử giả ở dưới cùng của cha.
+8. `pointer-events: none` xác định rằng phần tử giả không thể là một mục tiêu của sự kiện chuột, cho phép văn bản đằng sau nó vẫn có thể được lựa chọn / tương tác.
 
 #### Trình duyệt hỗ trợ.
 
@@ -1875,13 +1871,12 @@ Menu bật ra khi hover chuột.
 
 #### Giải thích.
 
-1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.
-2. `position: absolute` takes the popout menu out of the flow of the document and positions it
-   in relation to the parent.
-3. `left: 100%` moves the the popout menu 100% of its parent's width from the left.
-4. `visibility: hidden` hides the popout menu initially and allows for transitions (unlike `display: none`).
-5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate
-   children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.
+1. `position: relative` thiết lập bối cảnh định vị cho con nó.
+2. `position: absolute` lấy phần tử giả ra khỏi dòng chảy của tài liệu và định vị nó trong quan hệ với cha.
+3. `left: 100%` di chuyển menu 100% theo chiều ngang của cha từ bên trái
+4. `visibility: hidden` ẩn menu popout ban đầu và cho phép chuyển tiếp (unlike `display: none`).
+5. `.reference:hover > .popout-menu`có nghĩa là khi `.reference` được hover qua , Chọn ngay
+   children với 1 lớp của `.popout-menu` và thay đổi chúng `visibility` đến `visible`, trong đó hiển thị popout.
 
 #### Trình duyệt hỗ trợ.
 
@@ -1891,8 +1886,8 @@ Menu bật ra khi hover chuột.
 
 ### Gạch chân văn bản đẹp.
 
-A nicer alternative to `text-decoration: underline` where descenders do not clip the underline.
-Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
+A nicer alternative to `text-decoration: underline` nơi những người hạ sĩ không gạch dưới.
+Natively implemented as `text-decoration-skip-ink: auto` nhưng nó có kiểm soát ít hơn gạch dưới.
 
 #### HTML
 
