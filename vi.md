@@ -1886,8 +1886,8 @@ Menu bật ra khi hover chuột.
 
 ### Gạch chân văn bản đẹp.
 
-A nicer alternative to `text-decoration: underline` nơi những người hạ sĩ không gạch dưới.
-Natively implemented as `text-decoration-skip-ink: auto` nhưng nó có kiểm soát ít hơn gạch dưới.
+Một sự thay thế đẹp hơn cho `text-decoration: underline` nơi những người hạ sĩ không gạch dưới.
+thực hiện tự động giống `text-decoration-skip-ink: auto` nhưng nó có ít kiểm soát hơn gạch dưới.
 
 #### HTML
 
@@ -1952,14 +1952,14 @@ Natively implemented as `text-decoration-skip-ink: auto` nhưng nó có kiểm s
 
 #### Giải thích
 
-1. `text-shadow: ...` has 4 values with offsets that cover a 4x4 px area to ensure the underline
-   has a "thick" shadow that covers the line where descenders clip it. Use a color
-   that matches the background. For a larger font, use a larger `px` size.
-2. `background-image: linear-gradient(...)` creates a 90deg gradient with the current
-   text color (`currentColor`).
-3. The `background-*` properties size the gradient as 1x1px at the bottom and repeats it along the x-axis.
-4. The `::selection` pseudo selector ensures the text shadow does not interfere with text
-   selection.
+1. `text-shadow: ...` có 4 giá trị được đặt lại giá trị 4x4 px để đảm bảo gạch dưới
+    có một cái bóng "dày" để thay đổi mỗi dòng nơi mà dấu gạch dưới kẹp dưới nó. Sử dụng màu
+    phù hợp với nền. Đối với phông chữ lớn hơn, sử dụng kích thước `px` lớn hơn.
+2. `background-image: linear-gradient(...)`tạo ra một gradient 90deg với 
+    màu văn bản hiện tại (`currentColor`).
+3. `background- *` thuộc tính kích thước gradient như 1x1px ở dưới cùng và lặp lại nó dọc theo trục x.
+4. Bộ chọn giả `:: selection` đảm bảo rằng bóng văn bản không can thiệp vào văn bản
+    lựa chọn.
 
 #### Trình duyệt hỗ trợ.
 
@@ -1972,8 +1972,7 @@ Natively implemented as `text-decoration-skip-ink: auto` nhưng nó có kiểm s
 
 ### Reset tất style.
 
-Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
-
+Đặt lại tất cả các kiểu cho các giá trị mặc định với một thuộc tính. Điều này sẽ không ảnh hưởng đến `direction` và` unicode-bidi`.
 #### HTML
 
 ```html
@@ -2008,8 +2007,7 @@ Resets all styles to default values with one property. This will not affect `dir
 
 #### Giải thích.
 
-The `all` property allows you to reset all styles (inherited or not) to default values.
-
+Thuộc tính `all` cho phép bạn đặt lại tất cả các kiểu (kế thừa hoặc không) thành các giá trị mặc định.
 #### Trình duyệt hỗ trợ.
 
 <span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span>
@@ -2020,7 +2018,7 @@ The `all` property allows you to reset all styles (inherited or not) to default 
 
 ### Tách hình.
 
-Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
+Sử dụng một hình dạng SVG để tách hai khối khác nhau để tạo ra một hình ảnh thú vị hơn so với sự phân chia ngang theo tiêu chuẩn.
 
 #### HTML
 
@@ -2070,15 +2068,17 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 #### Giải thích.
 
-1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
-2. `::after` defines a pseudo element.
-3. `background-image: url(...)` adds the SVG shape (a 24x24 triangle in base64 format) as the background image
-   of the pseudo element, which repeats by default. It must be the same color as the block that is being
-   separated.
-4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 100%` ensures the element stretches the entire width of its parent.
-6. `height: 24px` is the same height as the shape.
-7. `bottom: 0` positions the pseudo element at the bottom of the parent.
+1. `position: relative`  trên phần tử thiết lập một ngữ cảnh định vị Descartes cho các phần tử giả.
+2. `::after` định nghĩa một phần tử giả.
+3. `background-image: url(...)`thêm hình SVG (hình tam giác 24x24 ở định dạng cơ sở64) làm hình nền
+    của phần tử giả, lặp lại theo mặc định. Nó phải có màu sắc tương tự như khối đang được
+    phân chia. 
+4. `position: absolute` lấy phần tử giả ra khỏi luồng của tài liệu và định vị nó trong quan hệ với phần tử cha.
+5. `width: 100%` đảm bảo phần tử trải dài toàn bộ chiều rộng của cha.
+6. `height: 24px`là chiều cao tương tự như hình dạng.
+7. `bottom: 0` 
+57/5000
+định vị phần tử giả ở dưới cùng của cha mẹ.
 
 #### Trình duyệt hỗ trợ.
 
@@ -2150,9 +2150,9 @@ span {
 
 #### Explanation
 
-1. `transition: opacity 0.2s` specifies that changes to opacity will be transitioned over 0.2 seconds.
-2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children
-   that are not currently being hovered and change their opacity to `0.5`.
+1. `transition: opacity 0.2s` chỉ định rằng thay đổi độ mờ đục sẽ được chuyển tiếp trong 0.2 giây.
+2. `.sibling-fade: hover span: not (: hover)` chỉ ra rằng khi cha mẹ được hovered, chọn bất kỳ `span` con
+    hiện không được hovered và thay đổi độ mờ của chúng thành `0.5`.
 
 #### Browser support
 
@@ -2165,8 +2165,7 @@ span {
 
 ### System font stack
 
-Uses the native font of the operating system to get close to a native app feel.
-
+Sử dụng phông chữ bản địa của hệ điều hành để có được cảm nhận gần giống với ứng dụng gốc.
 #### HTML
 
 ```html
@@ -2196,18 +2195,18 @@ Uses the native font of the operating system to get close to a native app feel.
 
 #### Explanation
 
-The browser looks for each successive font, preferring the first one if possible, and
-falls back to the next if it cannot find the font (on the system or defined in CSS).
+Trình duyệt tìm kiếm mỗi phông chữ liên tiếp, thích đầu tiên nếu có thể, và
+quay trở lại kế tiếp nếu nó không thể tìm thấy phông chữ (trên hệ thống hoặc được định nghĩa trong CSS).
 
-1. `-apple-system` is San Francisco, used on iOS and macOS (not Chrome however)
-2. `BlinkMacSystemFont` is San Francisco, used on macOS Chrome
-3. `Segoe UI` is used on Windows 10
-4. `Roboto` is used on Android
-5. `Oxygen-Sans` is used on GNU+Linux
-6. `Ubuntu` is used on Linux
-7. `"Helvetica Neue"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has a space)
-8. `Arial` is a font widely supported by all operating systems
-9. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
+1. `-apple-system` là San Francisco, được sử dụng trên iOS và macOS (không phải là Chrome)
+2. `BlinkMacSystemFont` là San Francisco, được sử dụng trên macOS Chrome
+3. `Segoe UI` được sử dụng trên Windows 10
+4. Roboto được sử dụng trên Android
+5. `Oxygen-Sans` được sử dụng trên GNU + Linux
+6. `Ubuntu` được sử dụng trên Linux
+7. `" Helvetica Neue "" và "Helvetica" được sử dụng trên macOS 10.10 và phiên bản dưới đây (được bao bọc bởi dấu ngoặc kép bởi vì nó có khoảng trắng)
+8. `Arial` là một font được hỗ trợ rộng rãi bởi tất cả các hệ điều hành
+9. `sans-serif` là phông chữ sans-serif fallback nếu không có phông chữ nào được hỗ trợ
 
 #### Browser support
 
@@ -2296,13 +2295,11 @@ Creates a triangle shape with pure CSS.
 #### Explanation
 
 [View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
+Màu của đường viền là màu của tam giác. Phía đỉnh điểm tam giác
+tương ứng với thuộc tính `border- *` ngược lại. Ví dụ: màu trên `border-top`
+có nghĩa là mũi tên xuống.
 
-The color of the border is the color of the triangle. The side the triangle tip points
-corresponds to the opposite `border-*` property. For example, a color on `border-top`
-means the arrow points downward.
-
-Experiment with the `px` values to change the proportion of the triangle.
-
+Thử nghiệm với các giá trị `px` để thay đổi tỷ lệ tam giác.
 #### Browser support
 
 <span class="snippet__support-note">✅ No caveats.</span>
@@ -2311,8 +2308,9 @@ Experiment with the `px` values to change the proportion of the triangle.
 
 ### Truncate text
 
-If the text is longer than one line, it will be truncated and end with an ellipsis `…`.
 
+88/5000
+Nếu văn bản dài hơn một dòng, nó sẽ được cắt ngắn và kết thúc bằng một dấu chấm phẩy '... `.
 #### HTML
 
 ```html
@@ -2350,12 +2348,12 @@ If the text is longer than one line, it will be truncated and end with an ellips
 
 #### Explanation
 
-1. `overflow: hidden` prevents the text from overflowing its dimensions
-   (for a block, 100% width and auto height).
-2. `white-space: nowrap` prevents the text from exceeding one line in height.
-3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it
-   will end with an ellipsis.
-4. `width: 200px;` ensures the element has a dimension, to know when to get ellipsis
+1. `overflow: hidden` ngăn văn bản tràn lên kích thước của nó
+    (đối với một khối, chiều rộng 100% và chiều cao tự động).
+2. `trắng-không gian: nowrap` ngăn chặn các văn bản từ vượt quá một chiều cao.
+3. `text-overflow: dấu chấm lửng 'làm cho nó để nếu văn bản vượt quá kích thước của nó, nó
+    sẽ kết thúc bằng một dấu chấm lửng.
+4. `width: 200px;` đảm bảo rằng phần tử có một chiều, để biết khi nào có dấu chấm lửng
 
 #### Browser support
 
