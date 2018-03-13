@@ -2148,13 +2148,13 @@ span {
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `transition: opacity 0.2s` chỉ định rằng thay đổi độ mờ đục sẽ được chuyển tiếp trong 0.2 giây.
 2. `.sibling-fade: hover span: not (: hover)` chỉ ra rằng khi cha mẹ được hovered, chọn bất kỳ `span` con
     hiện không được hovered và thay đổi độ mờ của chúng thành `0.5`.
 
-#### Browser support
+#### Trình duyệt hỗ trợ.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -2193,7 +2193,7 @@ Sử dụng phông chữ bản địa của hệ điều hành để có đượ
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 Trình duyệt tìm kiếm mỗi phông chữ liên tiếp, thích đầu tiên nếu có thể, và
 quay trở lại kế tiếp nếu nó không thể tìm thấy phông chữ (trên hệ thống hoặc được định nghĩa trong CSS).
@@ -2208,7 +2208,7 @@ quay trở lại kế tiếp nếu nó không thể tìm thấy phông chữ (tr
 8. `Arial` là một font được hỗ trợ rộng rãi bởi tất cả các hệ điều hành
 9. `sans-serif` là phông chữ sans-serif fallback nếu không có phông chữ nào được hỗ trợ
 
-#### Browser support
+#### Trình duyệt hỗ trợ.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -2292,7 +2292,7 @@ Creates a triangle shape with pure CSS.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 [View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
 Màu của đường viền là màu của tam giác. Phía đỉnh điểm tam giác
@@ -2300,13 +2300,13 @@ tương ứng với thuộc tính `border- *` ngược lại. Ví dụ: màu tr�
 có nghĩa là mũi tên xuống.
 
 Thử nghiệm với các giá trị `px` để thay đổi tỷ lệ tam giác.
-#### Browser support
+#### Trình duyệt hỗ trợ.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 <!-- tags: visual -->
 
-### Truncate text
+### Cắt bớt từ.
 
 
 88/5000
@@ -2346,7 +2346,7 @@ Nếu văn bản dài hơn một dòng, nó sẽ được cắt ngắn và kết
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `overflow: hidden` ngăn văn bản tràn lên kích thước của nó
     (đối với một khối, chiều rộng 100% và chiều cao tự động).
@@ -2355,7 +2355,7 @@ Nếu văn bản dài hơn một dòng, nó sẽ được cắt ngắn và kết
     sẽ kết thúc bằng một dấu chấm lửng.
 4. `width: 200px;` đảm bảo rằng phần tử có một chiều, để biết khi nào có dấu chấm lửng
 
-#### Browser support
+#### Trình duyệt hỗ trợ.
 
 <span class="snippet__support-note">⚠️ Only works for single line elements.</span>
 
