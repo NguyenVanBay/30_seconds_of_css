@@ -1,6 +1,6 @@
 # 30_seconds_of_css
 
-### Nảy khi tải trang.
+### ~~Nảy khi tải trang.~~ **Bouncing loader**  
 
 Tạo hiệu ứng nảy khi tải trang.
 #### HTML
@@ -91,18 +91,17 @@ Tạo hiệu ứng nảy khi tải trang.
 
 Ghi chú: `1rem` tương đương `16px`.
 
-1. Ta sử dụng tag `@keyframes` để định nghĩa hiệu ứng có 2 trạng thái, khi thành phần thay đổi độ trong suốt `opacity` và nó được dịch chuyển lên trong mặt phẳng 2D thì sử dụng thuộc tính `transform: translateY()`.
+1. Ta sử dụng tag `@keyframes` để định nghĩa ~~hiệu ứng~~ (animation) **animation** có 2 trạng thái, khi thành phần thay đổi độ trong suốt `opacity` và nó được dịch chuyển lên trong mặt phẳng 2D thì sử dụng thuộc tính `transform: translateY()`.
 
-2. `.bouncing-loader` là khối chứa các hình tròn có hiệu ứng nảy lên  và các hình tròn đó có sử dụng các thuộc tính`display: flex`
-   và `justify-content: center` để cố định vị trí của chúng vào giữa ( theo chiều dọc ).
+2. `.bouncing-loader` là ~~khối chứa~~ (the parent container) **vùng chứa cha của** các hình tròn có hiệu ứng nảy lên  và các hình tròn đó có sử dụng các thuộc tính`display: flex` và `justify-content: center` để cố định vị trí của chúng vào giữa ( theo chiều dọc ).
 
-3. thành phần `.bouncing-loader > div`, tập trung vào 3 thẻ con `div` nằm trong class cha `.bouncing-loader`  targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
+3. ~~thành phần `.bouncing-loader > div`, tập trung vào 3 thẻ con `div` nằm trong class cha `.bouncing-loader`  targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.~~ (.bouncing-loader`  targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles) **`.bouncing-loader > div` chỉ đến 3 `div` con của cha để đặt mẫu. Những thẻ `div` được đặt cho chiều rộng và chiều cao `1rem`, sử dụng `border-radius: 50%` để thay đổi chúng từ ô vuông sang vòng tròn. **  
 
 4. `margin: 3rem 0.2rem` quy định rằng mỗi khối hình tròn có khoản cách top vào bootom là `3rem` và trái phải là `0.2rem` như thế chúng sẽ không bị chạm vào nhau và cho chúng những khoảnh cách.
 
 5. `animation` là thuộc tính viết tắt của các thuộc tính sau : `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` được sử dụng.
 
-6. `nth-child(n)` chỉ tới thuộc tính thứ n của cha nó.
+6. `nth-child(n)` ~~chỉ tới thuộc tính thứ n của cha nó.~~ (targets the element which is the nth child of its parent) **trỏ đến thành phần là con thứ n của cha nó**  
 
 7. `animation-delay` được sử dụng với thẻ `div` thứ 2 và thứ 3,như vây các khối tròn sẽ không bắt đầu lên xuống cùng 1 thời điểm.
 
@@ -152,7 +151,7 @@ html {
 #### Giải thích
 
 1. `box-sizing: border-box` làm cho việc thêm `padding` hoặc `border`không ảnh hưởng tới `width` và `height`.
-2. `box-sizing: inherit` làm cho thành phần con không thể làm thay đổi kích thước của phần từ mẹ `box-sizing`.
+2. `box-sizing: inherit` ~~làm cho thành phần con không thể làm thay đổi kích thước của phần từ mẹ `box-sizing`.~~ (makes an element respect its parent's box-sizing rule.) **làm cho thành phần có kế thừa quy định về `box-sizing` của cha nó.  **
 
 #### Trình duyệt hỗ trợ.
 
@@ -335,7 +334,7 @@ Thay đổi kích thước cửa sổ trình duyệt của bạn để xem tỷ 
 
 #### Giải thích 
 
-`padding-top` ở trong `::before` tao ra phần tử có chiều cao bằng một phần trăm nào đó của chiều rộng.
+`padding-top` ở trong `::before` tao ra phần tử có chiều cao ~~bằng một phần trăm nào đó của~~ (equal a percentage of its width. ) **tỉ lệ với** chiều rộng.  
 . `padding-top`:: before là 100% nên chiều cao sẽ luôn bằng chiều rộng.
 Phương pháp này cũng cho phép nội dung được đặt bên trong phần tử bình thường.
 
@@ -411,10 +410,10 @@ Bạn có thể tạo một danh sách được sắp xếp sử dụng bất k�
 
 3. `counter(name, style)` hiển thị giá trị của biến đếm. hay được dùng với thuộc tính `content`. Đây là 1 hàm có thể có 2 tham số thứ nhất là tên và thứ 2 là số decimal hoặc upper-roman. (decimal được mặc định).
 
-4. `counters(counter, string, style)` hiển thị giá trị của biến đếm. hay được dùng với thuộc tính `content`. Đây là 1 hàm có thể có 3 tham số thứ nhất là tên và thứ 2 là chuỗi và tham số thứ 3 là số  decimal hoặc upper-roman. (decimal được mặc định).
+4. `counters(counter, string, style)` hiển thị giá trị của biến đếm. hay được dùng với thuộc tính `content`. Đây là 1 hàm có thể có 3 tham số.  thứ nhất là tên và thứ 2 là chuỗi và tham số thứ 3 là số  decimal hoặc upper-roman. (decimal được mặc định).
 
 
-5. Độ đến hữu ích để tạo ra danh sách Bởi vì một trường hợp mới của bộ đếm được tự động tạo ra trong các phần tử con. Dùng hàm `counters()` , separating text can be inserted between different levels of nested counters.
+5. ~~Độ đến~~ (CSS counter) **Bộ đếm CSS** hữu ích để tạo ra danh sách Bởi vì một trường hợp mới của bộ đếm được tự động tạo ra trong các phần tử con. Dùng hàm `counters()` , separating text can be inserted between different levels of nested counters. **tách văn bản có thể chèn vào giữa các tầng khác nhau của các counter lồng nhau**
 
 #### Browser support
 
@@ -496,7 +495,7 @@ Tùy chỉnh kiểu cuộn cho tài liệu và các phần tử có bị tràn, 
 
 #### Giải thích
 
-1. `::-webkit-scrollbar` đối tượng là toàn bộ phần tử thanh cuộn.
+1. `::-webkit-scrollbar` ~~đối tượng là toàn bộ phần tử thanh cuộn.~~ (targets the whole scrollbar element) **trỏ tới toàn bộ thành phần thanh cuộn **  
 2. `::-webkit-scrollbar-track` đối tượng chỉ rãnh của thanh cuộn thanh trượt.
 3. `::-webkit-scrollbar-thumb` đối tượng là thanh trượt.
 
@@ -513,9 +512,8 @@ có nhiều yếu tố khác để tạo kiểu thanh cuộn. Hãy ghé thăm [W
 <!-- tags: visual -->
 
 
-### Custom text selection (Lựa chọn văn bản tùy chọn)
-  
-  Thay đổi kiểu dáng của văn bản duoc lựa chọn .
+### Custom text selection (Lựa chọn văn bản tùy chọn) ** Tùy chỉnh bộ chọn văn bản**  
+  Thay đổi kiểu dáng của văn bản duoc lựa chọn
 
 #### HTML
 
