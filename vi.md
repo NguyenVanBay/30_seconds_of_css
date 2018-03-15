@@ -89,14 +89,14 @@ Tạo hiệu ứng nảy khi tải trang.
 
 #### Giải thích
 
-Ghi chú: `1rem` tương đương `16px`.
+Ghi chú: `1rem` thường là `16px`.
 
 1. Ta sử dụng tag `@keyframes` để định nghĩa hiệu ứng có 2 trạng thái, khi thành phần thay đổi độ trong suốt `opacity` và nó được dịch chuyển lên trong mặt phẳng 2D thì sử dụng thuộc tính `transform: translateY()`.
 
 2. `.bouncing-loader` là khối chứa các hình tròn có hiệu ứng nảy lên  và các hình tròn đó có sử dụng các thuộc tính`display: flex`
    và `justify-content: center` để cố định vị trí của chúng vào giữa ( theo chiều dọc ).
 
-3. thành phần `.bouncing-loader > div`, tập trung vào 3 thẻ con `div` nằm trong class cha `.bouncing-loader`  targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
+3. thành phần `.bouncing-loader > div`, nhắm vào 3 thẻ `div` con phần tử cha được định kiểu. The `div` được cho một chiều rộng và chiều cao là `1rem`, sử dụng `border-radius: 50%` để bo tròn cạnh.
 
 4. `margin: 3rem 0.2rem` quy định rằng mỗi khối hình tròn có khoản cách top vào bootom là `3rem` và trái phải là `0.2rem` như thế chúng sẽ không bị chạm vào nhau và cho chúng những khoảnh cách.
 
@@ -115,7 +115,7 @@ Ghi chú: `1rem` tương đương `16px`.
 <!-- tags: animation -->
 ### Đặt lại kích thước khối.
 
-Reset lại khối để `width` và `height`không bị thay đổi khi có thêm `border` hoặc `padding`.
+Reset lại khối để `width` và `height`không bị ảnh hường khi có thêm `border` hoặc `padding`.
 
 #### CSS
 
@@ -218,7 +218,7 @@ Một hình tròn với cùng bán kính thì chiều rộng và chiều cao ph�
 
 Đảm bảo rằng thuộc tính con sẽ được clear.
 
-###### Note: Điều này chỉ hữu ích khi ta dùng để xây bố cục của layout. Hãy dùng phương pháp tốt để tạo ra các layout hoặc grid layout.
+###### Note: Điều này chỉ hữu ích khi ta dùng để xây bố cục của layout. Hãy xem xét sử dụng một phương pháp hiện đại với flexbox hoặc grid.
 
 #### HTML
 
@@ -270,17 +270,17 @@ Một hình tròn với cùng bán kính thì chiều rộng và chiều cao ph�
 
 1. `.clearfix::after` tạo ra phần tử giả.
 2. `content: ''` cho phép phần tử giả thay đổi bố cục layout.
-3. `clear: both` chỉ ra rằng bên phải và bên trái không thể kể với các phần tử nào.
+3. `clear: both` chỉ ra rằng phía trái, phải hoặc cả 2 phía của phần tử không thẻ được lền kề phần tử đã float mà không cùng một khối định dạng.
 
 #### Trình duyệt hỗ trợ
 
-<span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
+<span class="snippet__support-note">⚠️ Để đoạn mã này hoạt động đúng bạn cần đảm bảo rằng không có phần tử con nào trong container và không có float trước khi có container rõ ràng trong cùng bối cảnh định dạng (ví dụ floated columns).</span>
 
 <!-- tags: layout -->
 ### Chiều rộng cố định để chiều cao tỉ lệ.
 
 Với phần tử có chiều rộng thay đổi đảm bảo chiều cao vẫn đúng tỉ lệ.
-(i.e., its width to height ratio remains constant).
+(i.e.,  tỉ lệ chiều rộng chiều cao cuả nó không đổ).
 
 #### HTML
 
